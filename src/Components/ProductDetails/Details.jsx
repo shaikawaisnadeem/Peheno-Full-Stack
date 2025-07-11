@@ -1,19 +1,31 @@
-import React, { use, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import './Details.css';
 import { useParams } from 'react-router-dom';
+import ReactContext from '../Context/Context';
+import Navbar from '../Navbar/Navbar';
+import { MoonLoader } from 'react-spinners';
 
 const Details = () => {
-     const { id } = useParams();
-  const [products] = use(ReactContext);
-  const product = products.find(p => p._id === id);
-  const [size, setSize] = useState('XS');
-  const [color, setColor] = useState('Cool Blue');
-  const [quantity, setQuantity] = useState(1);
-  const stock = 5;
+  const { id } = useParams();
+  const { products } = useContext(ReactContext);
+  const product = products?.find(p => p._id === id);
+
+  if (!product) {
+    return <div className="loader-details">
+      <MoonLoader color="#36d7b7" loading={true} size={50} />
+    </div>;
+  }
+
+  const [size, setSize] = useState('');
+  const [color, setColor] = useState('');
 
   return (
+    <>
+    <Navbar/>
     <div className="product-page">
-      <p className="breadcrumb">{product.gender}</p>
+        <img src={product.images[0]} alt={product.name} className="product-image" />
+      <div className='right-details-div'>
+        <p className="breadcrumb">{product.gender}</p>
       <h1 className="title">{product.name}</h1>
       <p className="description">{product.description}</p>
       <p className="price">{product.price}</p>
@@ -39,9 +51,8 @@ const Details = () => {
           {product.color.map(c => (
             <button
               key={c}
-              className={`option-btn ${color === c ? 'selected' : ''} ${c !== 'Cool Blue' ? 'disabled' : ''}`}
-              onClick={() => c === 'Cool Blue' && setColor(c)}
-              disabled={c !== 'Cool Blue'}
+              className={`option-btn ${color === c ? 'selected' : ''}`}
+              onClick={() =>  setColor(c)}
             >
               {c}
             </button>
@@ -49,20 +60,15 @@ const Details = () => {
         </div>
       </div>
 
-      {/* <div className="quantity-row">
-        <div className="quantity-controls">
-          <button onClick={() => setQuantity(q => Math.max(1, q - 1))}>−</button>
-          <span>{quantity}</span>
-          <button onClick={() => setQuantity(q => Math.min(stock, q + 1))}>+</button>
-        </div>
-        <span className="stock-text">{stock} in stock</span>
-      </div> */}
 
       <div className="action-buttons">
         <button className="buy-now">Buy Now</button>
         <button className="add-to-cart">Add to Cart</button>
       </div>
+      </div>
     </div>
+    </>
+    
   );
 };
 
