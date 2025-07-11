@@ -1,0 +1,34 @@
+.main-product-div {
+  padding: 40px 20px;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #fefefe;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.peheno-head {
+  font-size: 36px;
+  text-align: center;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.peheno-para {
+  text-align: center;
+  font-size: 18px;
+  color: #777;
+  margin-bottom: 40px;
+}
+
+.main-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 12px;
+  padding: 0 20px;
+}
+
+.product-grid {
+  display: flex;
+  justify-content: center;
+  justify-self: center;
+}
