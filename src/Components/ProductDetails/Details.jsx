@@ -1,8 +1,11 @@
 import React, { use, useState } from 'react';
 import './Details.css';
+import { useParams } from 'react-router-dom';
 
 const Details = () => {
-  const [product] = use(ReactContext);
+     const { id } = useParams();
+  const [products] = use(ReactContext);
+  const product = products.find(p => p._id === id);
   const [size, setSize] = useState('XS');
   const [color, setColor] = useState('Cool Blue');
   const [quantity, setQuantity] = useState(1);
