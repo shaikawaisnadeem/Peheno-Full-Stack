@@ -1,7 +1,7 @@
 .product-page {
   font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
   width: 90%;
-  margin: 40px auto;
+  margin: 35px auto;
   padding: 0;
   display: flex;
   background: #fff;
@@ -152,7 +152,31 @@
   gap: 18px;
   margin-top: 22px;
 }
-
+.random-text {
+  display: none;
+}
+.show-coupon{
+  display: flex;
+}
+.coupon-generator{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f7f7fb;
+    border-radius: 8px;
+}
+.coupon-text{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    color: #1A2530;
+}
+.barcode{
+    cursor: pointer;
+}
 .buy-now, .add-to-cart {
   flex: 1;
   padding: 14px 0;

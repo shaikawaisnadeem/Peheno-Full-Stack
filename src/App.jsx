@@ -27,14 +27,20 @@ const App = () => {
 
     data();
   }, []);
-
+  const [number,setNumber] = useState('')
+   const generateRandom = () => {
+    const random = Math.floor(Math.random() * 10000); 
+    setNumber(`PEHENO${random}`);
+  };
   return (
     <ReactContext
       value={{
         products: product,
         setProduct,
         productLoading: loading,
-        productError: error
+        productError: error,
+        coupon:number,
+        setCoupon:generateRandom
       }}
     >
       <BrowserRouter>

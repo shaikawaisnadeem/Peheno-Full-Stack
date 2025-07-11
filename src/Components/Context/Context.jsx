@@ -5,6 +5,8 @@ const ReactContext = React.createContext({
     productLoading: false,
     setProductLoading: () => {},
     productError: null,
-    setProductError: () => {}
+    setProductError: () => {},
+    coupon: '',
+    setCoupon: ()=>{},
 })
 export default ReactContext;
