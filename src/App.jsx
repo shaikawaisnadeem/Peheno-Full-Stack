@@ -27,20 +27,25 @@ const App = () => {
 
     data();
   }, []);
-  const [number,setNumber] = useState('')
-   const generateRandom = () => {
-    const random = Math.floor(Math.random() * 10000); 
-    setNumber(`PEHENO${random}`);
+
+  // Coupon system state
+  const [coupon, setCoupon] = useState('');
+
+  // Generates a random coupon code
+  const generateCoupon = () => {
+    const random = Math.floor(Math.random() * 10000);
+    setCoupon(`PEHENO${random}`);
   };
+
   return (
-    <ReactContext
+    <ReactContext.Provider
       value={{
         products: product,
         setProduct,
         productLoading: loading,
         productError: error,
-        coupon:number,
-        setCoupon:generateRandom
+        coupon,
+        setCoupon: generateCoupon,
       }}
     >
       <BrowserRouter>
@@ -49,7 +54,7 @@ const App = () => {
           <Route path="/product/:id" element={<Details />} />
         </Routes>
       </BrowserRouter>
-    </ReactContext>
+    </ReactContext.Provider>
   );
 };
 

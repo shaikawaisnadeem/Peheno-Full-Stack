@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom';
 import ReactContext from '../Context/Context';
 import Navbar from '../Navbar/Navbar';
 import { MoonLoader } from 'react-spinners';
+import { CiSaveUp1 } from "react-icons/ci";
+
 import { FaBarcode } from "react-icons/fa";
 
 const Details = () => {
@@ -14,6 +16,11 @@ const Details = () => {
   const [color, setColor] = useState('');
 
   const product = products?.find(p => p._id === id);
+
+  const handleGenerateCoupon = () => {
+    setCoupon();
+    setShowCoupon(true);
+  };
 
   if (!product) {
     return (
@@ -64,22 +71,29 @@ const Details = () => {
             </div>
           </div>
 
-          <div className='coupon-generator'>
-            <div className={showCoupon ? 'random-text show-coupon' : 'random-text'}>
-              <p>{coupon}</p>
-            </div>
+          <div className='coupon-section'>
+                <div className='coupon-generator'>
+            {showCoupon && (
+              <div className='random-text show-coupon'>
+                <p>{coupon}</p>
+              </div>
+            )}
             <div className='coupon-text'>
               <p>Generate Coupon</p>
               <p>
                 <FaBarcode
                   size={40}
-                  onClick={() => {
-                    setCoupon();
-                    setShowCoupon(prev => !prev);
-                  }}
+                  onClick={handleGenerateCoupon}
                   className='barcode'
+                  style={{ cursor: 'pointer' }}
+                  title="Click to generate coupon"
                 />
               </p>
+            </div>
+          </div>
+            <div className='save-coupon'>
+              <p>Save this coupon for future use</p>
+              <CiSaveUp1 size={30} style={{cursor:'pointer'}}/>
             </div>
           </div>
 
