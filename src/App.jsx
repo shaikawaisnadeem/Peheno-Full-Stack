@@ -28,14 +28,19 @@ const App = () => {
     data();
   }, []);
 
-  // Coupon system state
   const [coupon, setCoupon] = useState('');
 
-  // Generates a random coupon code
   const generateCoupon = () => {
-    const random = Math.floor(Math.random() * 10000);
-    setCoupon(`PEHENO${random}`);
-  };
+  const randomCoupon = `PEHENO${Math.floor(Math.random() * 10000)}`;
+  setCoupon(randomCoupon);
+};
+
+  useEffect(() => {
+  const savedCoupon = localStorage.getItem('couponCode');
+  if (savedCoupon) {
+    setCoupon(savedCoupon);
+  }
+}, []);
 
   return (
     <ReactContext.Provider

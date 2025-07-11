@@ -5,7 +5,7 @@ import ReactContext from '../Context/Context';
 import Navbar from '../Navbar/Navbar';
 import { MoonLoader } from 'react-spinners';
 import { CiSaveUp1 } from "react-icons/ci";
-
+import { useEffect } from 'react'
 import { FaBarcode } from "react-icons/fa";
 
 const Details = () => {
@@ -21,7 +21,12 @@ const Details = () => {
     setCoupon();
     setShowCoupon(true);
   };
-
+useEffect(() => {
+  const savedCoupon = localStorage.getItem('couponCode');
+  if (savedCoupon) {
+    setCoupon(savedCoupon);
+  }
+}, []);
   if (!product) {
     return (
       <div className="loader-details">
@@ -30,6 +35,9 @@ const Details = () => {
     );
   }
 
+  const popUp = () => {
+    alert(`Coupon saved successfully! ${coupon}`);
+  }
   return (
     <>
       <Navbar />
@@ -72,28 +80,41 @@ const Details = () => {
           </div>
 
           <div className='coupon-section'>
-                <div className='coupon-generator'>
-            {showCoupon && (
-              <div className='random-text show-coupon'>
-                <p>{coupon}</p>
+            <div className='coupon-generator'>
+              {showCoupon && (
+                <div className='random-text show-coupon'>
+                  <p>{coupon}</p>
+                </div>
+              )}
+              <div className='coupon-text'>
+                <p>Generate Coupon</p>
+                <p>
+                  <FaBarcode
+                    size={40}
+                    onClick={handleGenerateCoupon}
+                    className='barcode'
+                    style={{ cursor: 'pointer' }}
+                    title="Click to generate coupon"
+                  />
+                </p>
               </div>
-            )}
-            <div className='coupon-text'>
-              <p>Generate Coupon</p>
-              <p>
-                <FaBarcode
-                  size={40}
-                  onClick={handleGenerateCoupon}
-                  className='barcode'
-                  style={{ cursor: 'pointer' }}
-                  title="Click to generate coupon"
-                />
-              </p>
             </div>
-          </div>
             <div className='save-coupon'>
               <p>Save this coupon for future use</p>
-              <CiSaveUp1 size={30} style={{cursor:'pointer'}}/>
+              <CiSaveUp1
+  onClick={() => {
+    if (coupon.length > 0) {
+      localStorage.setItem('couponCode', coupon);
+      alert(`Coupon saved successfully! ${coupon}`);
+    }
+  }}
+  size={30}
+  style={{
+    cursor: coupon.length > 0 ? 'pointer' : 'not-allowed',
+    opacity: coupon.length > 0 ? 1 : 0.5
+  }}
+/>
+
             </div>
           </div>
 
