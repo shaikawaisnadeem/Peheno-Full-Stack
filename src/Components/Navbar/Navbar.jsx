@@ -7,10 +7,11 @@ import WomenNavbar from '../WomenNavbar/WomenNavbar';
 import MenNavbar from '../MenNavbar/MenNavbar';
 import CollectionCards from '../CollectonCards/CollectonCards';
 import AboutAnd from '../About/About';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
   const [openDropdown, setOpenDropdown] = useState(null);
-
+  const navi = useNavigate()
   const toggleDropdown = (menu) => {
     setOpenDropdown(prev => (prev === menu ? null : menu));
   };
@@ -51,7 +52,7 @@ const Navbar = () => {
         </div>
 
         <div className='laptop'>
-          <h2>Peheno</h2>
+          <h2 onClick={()=>navi('/')}>Peheno</h2>
         </div>
 
         <div className='rightNavbar'>
