@@ -9,6 +9,7 @@ const App = () => {
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+
   useEffect(() => {
     const data = async () => {
       try {
@@ -28,12 +29,14 @@ const App = () => {
   }, []);
 
   return (
-    <ReactContext value={{
-      products: product,
-      setProduct,
-      productLoading: loading,
-      productError: error
-    }}>
+    <ReactContext
+      value={{
+        products: product,
+        setProduct,
+        productLoading: loading,
+        productError: error
+      }}
+    >
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />

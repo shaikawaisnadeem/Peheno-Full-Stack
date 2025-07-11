@@ -19,34 +19,30 @@ const Navbar = () => {
     <>
       <div className='navbar'>
         <div className='laptopView'>
-          <NavLink
-            to="/women"
+          <a
             onClick={() => toggleDropdown('women')}
             className={({ isActive }) => isActive ? 'active' : 'link women'}
           >
             Women
-          </NavLink>
-          <NavLink
-            to="/men"
+          </a>
+          <a
             onClick={() => toggleDropdown('men')}
             className={({ isActive }) => isActive ? 'active' : 'link men'}
           >
             Men
-          </NavLink>
-          <NavLink
-            to="/collections"
+          </a>
+          <a
             onClick={() => toggleDropdown('collections')}
             className={({ isActive }) => isActive ? 'active' : 'link collection'}
           >
             Collections
-          </NavLink>
-          <NavLink
-            to="/company"
+          </a>
+          <a
             onClick={() => toggleDropdown('company')}
             className={({ isActive }) => isActive ? 'active' : 'link company'}
           >
             Company
-          </NavLink>
+          </a>
         </div>
 
         <div className='hamburgerMobile'>
