@@ -11,7 +11,9 @@ const PehenoDreams = () => {
       <h1 className='peheno-head'>Peheno Dreams</h1>
       <p className='peheno-para'>Soft hues, bold styles — embrace the pastel aesthetic.</p>
 
-      {loading && <MoonLoader color="#36d7b7" loading={loading} size={50} />}
+      <div className='product-loader'>
+        {loading && <MoonLoader color="#36d7b7" loading={loading} size={50} />}
+      </div>
 
       <div className='main-grid'>   
         {products.map((product) => (
