@@ -39,7 +39,7 @@ const Login = () => {
     }
 
     try {
-      const res = await fetch('http://localhost:3000/api/data/login', {
+      const res = await fetch('http://localhost:3000/api/data/signin', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -52,8 +52,8 @@ const Login = () => {
       if (!res.ok) {
         setError(data.message || 'Login failed');
       } else {
-        setCookie('token', data.token);
-        alert('Login successful!');
+        setCookie('token', data.jwt_token);
+        nav('/')
       }
 
     } catch (err) {
