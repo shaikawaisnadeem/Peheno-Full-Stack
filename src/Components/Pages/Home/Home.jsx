@@ -3,6 +3,8 @@ import './Home.css';
 import Navbar from '../../Navbar/Navbar';
 import PehenoDreams from '../../Peheno Dreams/PehenoDreams';
 import Footer from '../../Footer/Footer';
+import Login from '../../Login/Login';
+import Signup from '../../SignUp/SignUp';
 
 const Home = () => {
     return (

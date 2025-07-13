@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+.login-page {
+  height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #d3a4f4, #e6b7f9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-wrapper {
+  width: 100%;
+  max-width: 420px;
+  padding: 20px;
+}
+
+.login-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(25px);
+  border-radius: 16px;
+  padding: 40px 30px;
+  color: white;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+.brand-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #ce95f4;
+  margin-bottom: 5px;
+}
+
+.brand-tagline {
+  font-size: 14px;
+  margin-bottom: 25px;
+  opacity: 0.8;
+}
+
+.form-section .form-title {
+  margin-bottom: 5px;
+  font-size: 22px;
+}
+
+.form-subtitle {
+  font-size: 14px;
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
+
+.form-label {
+  display: block;
+  text-align: left;
+  font-size: 14px;
+  margin: 12px 0 5px;
+}
+
+.form-input-box {
+  background: rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.form-input-box input {
+  border: none;
+  background: transparent;
+  outline: none;
+  flex: 1;
+  color: white;
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+.form-icon {
+  font-size: 16px;
+  opacity: 0.8;
+}
+
+.form-eye-icon {
+  font-size: 16px;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.form-forgot {
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+.form-forgot a {
+  color: white;
+  font-size: 13px;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.form-forgot a:hover {
+  opacity: 1;
+}
+
+.form-signin-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.25);
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background 0.3s ease;
+}
+
+.form-signin-btn:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.form-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: white;
+  font-size: 12px;
+  margin: 20px 0;
+  opacity: 0.8;
+}
+
+.form-divider hr {
+  flex: 1;
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.social-login-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.google-btn,
+.facebook-btn {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+.google-btn:hover,
+.facebook-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.signup-link-text {
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+.signup-link-text a {
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.signup-link-text a:hover {
+  opacity: 1;
+}
+
+.login-footer-text {
+  margin-top: 20px;
+  font-size: 12px;
+  text-align: center;
+  color: white;
+  opacity: 0.5;
+}

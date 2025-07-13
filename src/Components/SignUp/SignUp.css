@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+.signup-page {
+  height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #d3a4f4, #e6b7f9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-wrapper {
+  width: 100%;
+  max-width: 420px;
+  padding: 20px;
+}
+
+.signup-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(25px);
+  border-radius: 16px;
+  padding: 40px 30px;
+  color: white;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+.signup-brand-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #ce95f4;
+  margin-bottom: 5px;
+}
+
+.signup-brand-tagline {
+  font-size: 14px;
+  margin-bottom: 25px;
+  opacity: 0.8;
+}
+
+.signup-form-section {
+  /* Added this wrapper since you have used it in JSX */
+}
+
+.signup-form-title {
+  margin-bottom: 5px;
+  font-size: 22px;
+}
+
+.signup-form-subtitle {
+  font-size: 14px;
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
+
+.signup-form-label {
+  display: block;
+  text-align: left;
+  font-size: 14px;
+  margin: 12px 0 5px;
+}
+
+.signup-form-input-box {
+  background: rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.signup-form-input-box input {
+  border: none;
+  background: transparent;
+  outline: none;
+  flex: 1;
+  color: white;
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+.signup-form-icon {
+  font-size: 16px;
+  opacity: 0.8;
+}
+
+.signup-form-eye-icon {
+  font-size: 16px;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.signup-form-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.25);
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  margin: 20px 0;
+  transition: background 0.3s ease;
+}
+
+.signup-form-btn:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.signup-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: white;
+  font-size: 12px;
+  margin: 20px 0;
+  opacity: 0.8;
+}
+
+.signup-divider hr {
+  flex: 1;
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.signup-social-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.signup-google-btn,
+.signup-facebook-btn {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+.signup-google-btn:hover,
+.signup-facebook-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.signup-footer-link {
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+.signup-footer-link a {
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.signup-footer-link a:hover {
+  opacity: 1;
+}
+
+.signup-footer-text {
+  margin-top: 20px;
+  font-size: 12px;
+  text-align: center;
+  color: white;
+  opacity: 0.5;
+}

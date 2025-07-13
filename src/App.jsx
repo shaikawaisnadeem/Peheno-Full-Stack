@@ -3,7 +3,10 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navbar from './Components/Navbar/Navbar';
 import Home from './Components/Pages/Home/Home';
 import Details from './Components/ProductDetails/Details';
+import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute.jsx';
 import ReactContext from './Components/Context/Context.jsx';
+import Login from './Components/Login/Login.jsx';
+import Signup from './Components/SignUp/SignUp.jsx';
 
 const App = () => {
   const [product, setProduct] = useState([]);
@@ -55,8 +58,10 @@ const App = () => {
     >
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/product/:id" element={<Details />} />
+          <Route path="/" element={<ProtectedRoute><Home /></ProtectedRoute>} />
+          <Route path="/product/:id" element={<ProtectedRoute><Details /></ProtectedRoute>} />
+          <Route path='/login' element={<Login/>}/>
+          <Route path='/signup' element={<Signup/>}/>
         </Routes>
       </BrowserRouter>
     </ReactContext.Provider>
