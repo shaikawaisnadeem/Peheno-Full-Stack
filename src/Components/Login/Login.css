@@ -2,8 +2,7 @@
 
 .login-page {
   height: 100vh;
-  font-family: 'Roboto', sans-serif;
-  background: linear-gradient(135deg, #d3a4f4, #e6b7f9);
+  background-color: #caa5b0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,14 +25,19 @@
 }
 
 .brand-title {
-  font-size: 32px;
+  font-size: 48px;
   font-weight: 800;
-  color: #ce95f4;
+  color: #000;
+  text-decoration: wavy underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  font-weight: 500;
+  margin-bottom: 10px;
   margin-bottom: 5px;
 }
 
 .brand-tagline {
-  font-size: 14px;
+  font-size: 18px;
   margin-bottom: 25px;
   opacity: 0.8;
 }

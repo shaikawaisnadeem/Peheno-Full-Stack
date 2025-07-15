@@ -5,7 +5,7 @@ import { MoonLoader } from 'react-spinners';
 import ReactContext from '../Context/Context';
 
 const PehenoDreams = () => {
-  const { products, productLoading: loading, productError: error } = use(ReactContext);
+  const { products, productLoading: loading } = use(ReactContext);
   return (
     <div className='main-product-div'>
       <h1 className='peheno-head'>Peheno Dreams</h1>
