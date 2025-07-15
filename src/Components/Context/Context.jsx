@@ -8,5 +8,6 @@ const ReactContext = React.createContext({
     setProductError: () => {},
     coupon: '',
     setCoupon: ()=>{},
+    
 })
 export default ReactContext;

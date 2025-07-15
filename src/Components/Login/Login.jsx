@@ -91,7 +91,7 @@ const Login = () => {
             <div className="form-input-box">
               <span className="form-icon"><RiLockPasswordLine /></span>
               <input
-                type={showPassword ? "text" : "password"}
+                type={showPassword ?"password"   : "text"}
                 placeholder="Enter your password"
                 onChange={setPasswordFun}
                 value={password}

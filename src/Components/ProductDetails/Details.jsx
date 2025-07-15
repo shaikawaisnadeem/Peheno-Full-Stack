@@ -7,7 +7,7 @@ import { MoonLoader } from 'react-spinners';
 import { CiSaveUp1 } from "react-icons/ci";
 import { useEffect } from 'react'
 import { FaBarcode } from "react-icons/fa";
-
+import {useCookies} from 'react-cookie';
 const Details = () => {
   const { id } = useParams();
   const { products, coupon, setCoupon } = useContext(ReactContext);
@@ -16,6 +16,8 @@ const Details = () => {
   const [color, setColor] = useState('');
 
   const product = products?.find(p => p._id === id);
+
+
 
   const handleGenerateCoupon = () => {
     setCoupon();
@@ -120,7 +122,7 @@ useEffect(() => {
 
           <div className="action-buttons">
             <button className="buy-now">Buy Now</button>
-            <button className="add-to-cart">Add to Cart</button>
+            <button className="add-to-cart" >Add to Cart</button>
           </div>
         </div>
       </div>
