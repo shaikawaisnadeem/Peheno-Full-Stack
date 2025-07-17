@@ -14,11 +14,35 @@ const Details = () => {
   const [showCoupon, setShowCoupon] = useState(false);
   const [size, setSize] = useState('');
   const [color, setColor] = useState('');
+  const [cookies,setCookie] = useCookies(['token']);
+  const token = cookies.token?.trim() || '';
+
 
   const product = products?.find(p => p._id === id);
-
-
-
+  
+  const addToCartItem = async(e,product_id)=>{
+    e.preventDefault();
+    const data = {
+      productId: product_id,
+      quantity: 1,
+    };
+    e.preventDefault();
+    const options = {
+      method : "POST",
+  headers: {
+    "Content-Type": "application/json",
+    "Authorization": `Bearer ${token}`
+  },
+  body: JSON.stringify(data),
+  credentials: 'include', 
+  
+    }
+    console.log(token);
+    console.log(product_id)
+  const res = await fetch('http://localhost:3000/api/data/addtocart',options);
+  const result = await res.json()
+  console.log(result)
+  }
   const handleGenerateCoupon = () => {
     setCoupon();
     setShowCoupon(true);
@@ -122,7 +146,7 @@ useEffect(() => {
 
           <div className="action-buttons">
             <button className="buy-now">Buy Now</button>
-            <button className="add-to-cart" >Add to Cart</button>
+            <button className="add-to-cart" onClick={(e) => addToCartItem(e,product._id)}>Add to Cart</button>
           </div>
         </div>
       </div>

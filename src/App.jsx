@@ -7,6 +7,7 @@ import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute.jsx';
 import ReactContext from './Components/Context/Context.jsx';
 import Login from './Components/Login/Login.jsx';
 import Signup from './Components/SignUp/SignUp.jsx';
+import Cart from './Components/Pages/Cart/Cart.jsx';
 
 const App = () => {
   const [product, setProduct] = useState([]);
@@ -62,6 +63,7 @@ const App = () => {
           <Route path="/product/:id" element={<ProtectedRoute><Details /></ProtectedRoute>} />
           <Route path='/login' element={<Login/>}/>
           <Route path='/signup' element={<Signup/>}/>
+          <Route path='/cart' element={<ProtectedRoute><Cart/></ProtectedRoute>}/>
         </Routes>
       </BrowserRouter>
     </ReactContext.Provider>

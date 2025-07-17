@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 const Card = ({product}) => {
+  console.log(product)
   const navigate = useNavigate();
   const viewInnerDetails = ()=>{
     navigate(`/product/${product._id}`)

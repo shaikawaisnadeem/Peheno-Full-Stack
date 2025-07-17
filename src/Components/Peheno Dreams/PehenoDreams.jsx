@@ -17,7 +17,7 @@ const PehenoDreams = () => {
 
       <div className='main-grid'>   
         {products.map((product) => (
-          <div className='product-grid' key={product._id}>
+          <div className='product-grids' key={product._id}>
             <Card product={product} />
           </div>
         ))}

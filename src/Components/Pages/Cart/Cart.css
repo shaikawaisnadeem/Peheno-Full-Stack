@@ -1,0 +1,4 @@
+.cart-products{
+    display: grid;
+    grid-template-columns: repeat(auto,min-max(300px,1fr));
+}
