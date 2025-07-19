@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './Signup.css';
+import './SignUp.css';
 import { RiLockPasswordLine } from "react-icons/ri";
 import { MdEmail } from "react-icons/md";
 import { FaUser, FaEye, FaEyeSlash } from "react-icons/fa";
