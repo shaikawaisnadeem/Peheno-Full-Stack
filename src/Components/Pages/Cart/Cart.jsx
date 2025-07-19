@@ -23,7 +23,7 @@ const Cart = () => {
           return;
         }
 
-        const res = await fetch("http://localhost:3000/addtocarts", {
+        const res = await fetch("http://localhost:3000/addtocarts" || 'https://peheno-mern-stack-server.onrender.com/addtocarts', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
