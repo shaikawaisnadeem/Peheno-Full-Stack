@@ -39,7 +39,7 @@ const Login = () => {
     }
 
     try {
-      const res = await fetch('http://localhost:3000/api/data/signin', {
+      const res = await fetch('http://localhost:3000/api/data/signin' || 'https://peheno-mern-stack-server.onrender.com/api/data/signin', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
