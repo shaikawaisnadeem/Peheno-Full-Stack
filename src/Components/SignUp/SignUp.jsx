@@ -19,7 +19,7 @@ const Signup = () => {
   useEffect(() => {
     const fetchingForm = async () => {
       try {
-        const res = await fetch('http://localhost:3000/api/data/signup');
+        const res = await fetch('https://peheno-mern-stack-server.onrender.com/api/data/signup');
         const resData = await res.json();
         console.log('Existing signup data:', resData);
       } catch (err) {
