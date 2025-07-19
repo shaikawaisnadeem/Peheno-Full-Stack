@@ -18,7 +18,7 @@ const App = () => {
     const data = async () => {
       try {
         setLoading(true);
-        const response = await fetch('http://localhost:3000/');
+        const response = await fetch( 'https://peheno-mern-stack-server.onrender.com/');
         const responseData = await response.json();
         setProduct(responseData.data);
       } catch (err) {
