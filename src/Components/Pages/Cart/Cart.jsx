@@ -4,7 +4,6 @@ import Card from '../../Card/Card.jsx';
 import { use } from 'react';
 import './Cart.css'
 import ReactContext from '../../Context/Context.jsx';
-import product from '../../../../../server/models/pehenoProducts.js';
 
 const Cart = () => {
   const [cookies] = useCookies(['token']);
